@@ -1,7 +1,7 @@
 # Hooklane
 
-Public one-pager for [hooklane.org](https://hooklane.org).
+Public one-pager for [https://www.hooklane.org](https://www.hooklane.org).
 
 Clip Kit: €15, one-time PDF. Checkout is Polar.
 
-Static HTML. No build, no analytics, no webfonts.
+Static HTML. Drop-ready for Vercel. No build step, no analytics, no cookie wall.
