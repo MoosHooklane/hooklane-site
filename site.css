@@ -52,6 +52,7 @@ a:focus-visible,
   margin: 0 auto;
 }
 
+/* Header */
 .site-header {
   display: flex;
   align-items: center;
@@ -102,6 +103,7 @@ a:focus-visible,
 
 .price-link:hover { color: var(--copper); }
 
+/* Hero */
 .hero {
   display: grid;
   gap: 2rem;
@@ -133,7 +135,9 @@ h1 {
   max-width: 36rem;
 }
 
-.buy { margin: 0; }
+.buy {
+  margin: 0;
+}
 
 .price {
   margin: 0 0 .85rem;
@@ -158,8 +162,8 @@ h1 {
 
 .close {
   margin: .9rem 0 0;
-  color: var(--muted);
-  font-size: .95rem;
+  color: var(--bone);
+  font-size: 1.02rem;
 }
 
 .hero-media {
@@ -187,6 +191,7 @@ h1 {
   .hero-media img { aspect-ratio: 5 / 4; }
 }
 
+/* Sections */
 .block {
   padding: 2.4rem 0;
   border-bottom: 1px solid var(--line);
@@ -248,6 +253,7 @@ h1 {
   color: var(--muted);
 }
 
+/* Footer */
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -268,6 +274,7 @@ h1 {
 .site-footer a { color: var(--muted); text-decoration: none; }
 .site-footer a:hover { color: var(--bone); }
 
+/* Motion */
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -285,4 +292,51 @@ h1 {
     transform: none;
     transition: none;
   }
+}
+
+/* Proof — one real hook from the kit */
+.proof {
+  padding: 2.1rem 0 2.3rem;
+  border-bottom: 1px solid var(--line);
+  max-width: 42rem;
+}
+.proof-kicker {
+  margin: 0 0 .85rem;
+  color: var(--muted);
+  font-size: .82rem;
+  letter-spacing: .04em;
+}
+.proof-card {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem 1.15rem;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border: 1px solid var(--line);
+  background: #10100e;
+}
+.proof-num {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.55rem;
+  color: var(--copper);
+  line-height: 1;
+}
+.proof-card h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0 0 .45rem;
+  letter-spacing: -0.01em;
+}
+.proof-formula {
+  margin: 0 0 .7rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.proof-ex {
+  margin: 0;
+  color: var(--bone);
+  font-size: .98rem;
 }
