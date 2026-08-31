@@ -169,16 +169,8 @@ h1 {
 .hero-media {
   margin: 0;
   border: 1px solid var(--line);
-  overflow: hidden;
-  background: var(--bg);
-}
-
-.hero-media img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: 18% 42%;
-  aspect-ratio: 4 / 3;
+  background: #10100e;
+  padding: 1.2rem 1.25rem 1.35rem;
 }
 
 @media (min-width: 840px) {
@@ -188,7 +180,6 @@ h1 {
     gap: 3.25rem;
     padding: 3.25rem 0 3.5rem;
   }
-  .hero-media img { aspect-ratio: 5 / 4; }
 }
 
 /* Sections */
@@ -340,3 +331,7 @@ h1 {
   color: var(--bone);
   font-size: .98rem;
 }
+
+.hero-media .proof-kicker { margin: 0 0 1rem; }
+.hero-media .proof-num { margin: 0 0 .35rem; }
+.hero-media h2 { margin: 0 0 .55rem; }
