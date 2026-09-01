@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" fill="#0c0c0b"/>
-  <text x="7.2" y="21.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" font-weight="650" letter-spacing="1.8" fill="#eceae4">HL</text>
-  <path d="M7.4 24.1 A 2.15 2.15 0 0 0 11.7 24.1 H 24.6" fill="none" stroke="#c45a2a" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="16" y="22" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700" fill="#e8e2d4">H</text>
 </svg>
