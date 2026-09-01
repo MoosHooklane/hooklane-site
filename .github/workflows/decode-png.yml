@@ -1,0 +1,41 @@
+name: decode-png-payloads
+on:
+  push:
+    paths:
+      - "assets-b64/**"
+      - ".github/workflows/decode-png.yml"
+  workflow_dispatch:
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode base64 PNG payloads to real binaries
+        run: |
+          python3 - <<'PY'
+          import base64, pathlib
+          src = pathlib.Path("assets-b64")
+          if not src.exists():
+              raise SystemExit("no assets-b64")
+          for p in sorted(src.glob("*.b64")):
+              name = p.name[:-4]
+              out = pathlib.Path(name)
+              data = base64.b64decode(p.read_text().strip())
+              if data[:8] != b"\x89PNG\r\n\x1a\n":
+                  raise SystemExit(f"not a png: {name}")
+              out.write_bytes(data)
+              print("wrote", out, len(data))
+          PY
+      - name: Commit real PNGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add favicon-32.png favicon-48.png apple-touch-icon.png mark.png hooklane-mark-mail.png
+          if git diff --cached --quiet; then
+            echo "no png changes"
+          else
+            git commit -m "sharp hook+lane mark in header and real favicon files."
+            git push
+          fi
