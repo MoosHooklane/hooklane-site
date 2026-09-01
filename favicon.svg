@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#0c0c0b"/>
-  <text x="16" y="22" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700" fill="#e8e2d4">H</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hooklane">
+  <rect width="64" height="64" fill="#0c0c0b"/>
+  <g transform="matrix(0.0754 0 0 0.0754 -26.82 -6.04)">
+    <path fill="#eceae4" d="M731 284C670 318 575 378 519 428A185.5 185.5 0 1 0 832 626H1076V553H778.5A111 111 0 1 1 668.5 427.5L656 419 672 412 731 284Z"/>
+    <path fill="#c45a2a" d="M731 284L716 316 702 348 687 380 672 412 656 419 663 404 674 380 688 348 703 316 718 292Z"/>
+  </g>
 </svg>
