@@ -1,0 +1,39 @@
+name: decode-og-jpg
+on:
+  push:
+    paths:
+      - "assets-og/og.jpg.b64"
+      - ".github/workflows/decode-og.yml"
+  workflow_dispatch:
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode og.jpg from base64
+        run: |
+          python3 <<'PY'
+          import base64, pathlib
+          p = pathlib.Path("assets-og/og.jpg.b64")
+          raw = "".join(p.read_text().split())
+          pad = "=" * ((4 - len(raw) % 4) % 4)
+          data = base64.b64decode(raw + pad)
+          print("bytes", len(data), "sig", data[:4].hex())
+          if data[:3] != b"\xff\xd8\xff":
+              raise SystemExit("not a jpeg")
+          pathlib.Path("og.jpg").write_bytes(data)
+          PY
+      - name: Commit og.jpg
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add og.jpg
+          if git diff --cached --quiet; then
+            echo "no og.jpg change"
+            exit 0
+          fi
+          git commit -m "og.jpg: locked HOOKLANE grotesk + copper U-hook"
+          git pull --rebase origin main
+          git push
