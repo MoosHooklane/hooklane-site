@@ -8,6 +8,10 @@ on:
       - "site.css.b64"
       - "site.css.b64.part1"
       - "site.css.b64.part2"
+      - "site.css.b64.part1a"
+      - "site.css.b64.part1b"
+      - "site.css.b64.part2a"
+      - "site.css.b64.part2b"
       - ".github/workflows/decode-static.yml"
   workflow_dispatch:
 jobs:
@@ -45,9 +49,15 @@ jobs:
           css_path = root / "site.css.b64"
           p1 = root / "site.css.b64.part1"
           p2 = root / "site.css.b64.part2"
+          p1a = root / "site.css.b64.part1a"
+          p1b = root / "site.css.b64.part1b"
+          p2a = root / "site.css.b64.part2a"
+          p2b = root / "site.css.b64.part2b"
           data = None
           if css_path.exists():
               data = base64.b64decode(load_b64(css_path))
+          elif all(p.exists() for p in (p1a, p1b, p2a, p2b)):
+              data = base64.b64decode(load_b64(p1a) + load_b64(p1b) + load_b64(p2a) + load_b64(p2b))
           elif p1.exists() and p2.exists():
               data = base64.b64decode(load_b64(p1) + load_b64(p2))
           if data is not None:
@@ -60,7 +70,7 @@ jobs:
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          rm -f og.jpg.b64 fonts/*.b64 site.css.b64 site.css.b64.part1 site.css.b64.part2 decode.js
+          rm -f og.jpg.b64 fonts/*.b64 site.css.b64 site.css.b64.part1 site.css.b64.part2 site.css.b64.part1a site.css.b64.part1b site.css.b64.part2a site.css.b64.part2b decode.js
           rm -f .github/workflows/decode-static.yml
           git add -A
           if git diff --cached --quiet; then
