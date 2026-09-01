@@ -9,11 +9,9 @@
   <meta name="description" content="30 hooks with the example filled in, captions you can paste, and a 14-day plan for one person. One PDF. €15. Not a course. Not a view guarantee." />
   <link rel="canonical" href="https://www.hooklane.org" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
-  <link rel="icon" href="favicon-48.png" type="image/png" sizes="48x48" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="mask-icon" href="favicon.svg" color="#0c0c0b" />
   <link rel="stylesheet" href="site.css" />
-  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+  <noscript><style>.reveal{opacity:1}</style></noscript>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.hooklane.org" />
   <meta property="og:title" content="Hooklane Clip Kit — €15" />
@@ -48,37 +46,38 @@
   </script>
 </head>
 <body>
-  <header class="site-header wrap">
-    <a class="brand" href="https://www.hooklane.org">
-      <img src="mark.png" width="192" height="128" alt="" />
-      <span class="wordmark">HOOKLANE</span>
-    </a>
-    <a class="price-link" href="https://buy.polar.sh/polar_cl_uQ9z3LKW4pv9IjMafKBH0tgk46AqbRaMkzt012bwIl5">€15</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="https://www.hooklane.org">
+        <img src="mark.svg" width="72" height="48" alt="" />
+        <span class="wordmark">HOOKLANE</span>
+      </a>
+      <a class="bar-buy" href="https://buy.polar.sh/polar_cl_uQ9z3LKW4pv9IjMafKBH0tgk46AqbRaMkzt012bwIl5">€15 Buy</a>
+    </div>
   </header>
-
   <main>
-    <section class="hero wrap">
-      <div class="hero-copy reveal">
+    <section class="stuck wrap">
+      <div class="stuck-copy reveal">
         <p class="kicker">Clip Kit · €15 · PDF</p>
         <h1>You do not need another faceless-content guru.</h1>
         <p class="lead">You need 30 hooks with the example already filled in, captions you can paste, and a two-week plan that assumes you are one person.</p>
-        <div class="buy" id="buy">
+        <div class="buy">
           <p class="price">€15 · PDF · one-time</p>
           <a class="cta" href="https://buy.polar.sh/polar_cl_uQ9z3LKW4pv9IjMafKBH0tgk46AqbRaMkzt012bwIl5" rel="noopener">Buy the Clip Kit</a>
           <p class="close">Buy it, pick three hooks, post tomorrow.</p>
         </div>
       </div>
-      <figure class="hero-media proof-card reveal">
-        <p class="proof-kicker">From the kit</p>
-        <p class="proof-num">1</p>
-        <h2>Interrupted claim</h2>
-        <p class="proof-formula">Open on a confident sentence, cut it, overlay the correction.</p>
-        <p class="proof-ex">On-screen: “Post every day and the algorithm—” / hard cut / speaker: “—will not save a channel with no offer.”</p>
-      </figure>
+      <div class="stuck-pin">
+        <figure class="proof-object reveal">
+          <p class="proof-kicker">From the kit</p>
+          <p class="proof-num">1</p>
+          <h2>Interrupted claim</h2>
+          <p class="proof-formula">Open on a confident sentence, cut it, overlay the correction.</p>
+          <p class="proof-ex">On-screen: “Post every day and the algorithm—” / hard cut / speaker: “—will not save a channel with no offer.”</p>
+        </figure>
+      </div>
     </section>
-
-
-    <section class="block wrap reveal" aria-labelledby="inside-heading">
+    <section class="beat inside wrap reveal" aria-labelledby="inside-heading">
       <h2 id="inside-heading">Inside</h2>
       <ul>
         <li>How to use it in 20 minutes</li>
@@ -89,8 +88,7 @@
         <li>A first-euro note. Ads are slow on a new account.</li>
       </ul>
     </section>
-
-    <div class="split wrap">
+    <div class="beat split wrap">
       <article class="reveal">
         <h2>For</h2>
         <p>You clip podcasts or talking heads, or you make screen and voiceover. You will actually post for 14 days. You have somewhere for attention to go.</p>
@@ -100,18 +98,20 @@
         <p>Sixty uploads a day is a different business, and YouTube already wrote a rule for it. If you need ads on a brand-new channel to pay rent, this will not help. The faceless-AI-empire crowd should keep walking.</p>
       </article>
     </div>
-
-    <section class="not wrap reveal" aria-labelledby="not-heading">
+    <section class="beat not wrap reveal" aria-labelledby="not-heading">
       <h2 id="not-heading">This is not</h2>
       <p>It is a PDF. Not a course, and not a coaching call. It does not license anyone else's podcast or face, and it is not legal advice. There is no view guarantee. We are not going to invent a case study to fill that hole.</p>
     </section>
+    <section class="beat close-beat wrap reveal" id="buy" aria-label="Buy the Clip Kit">
+      <p class="price">€15 · PDF · one-time</p>
+      <a class="cta" href="https://buy.polar.sh/polar_cl_uQ9z3LKW4pv9IjMafKBH0tgk46AqbRaMkzt012bwIl5" rel="noopener">Buy the Clip Kit</a>
+      <p class="close">Buy it, pick three hooks, post tomorrow.</p>
+    </section>
   </main>
-
   <footer class="site-footer wrap">
-    <img src="mark.png" width="192" height="128" alt="" />
+    <img src="mark.svg" width="48" height="32" alt="" />
     <p><a href="mailto:support@hooklane.org">support@hooklane.org</a> · 14-day refund if the file does not download · No invented case-study numbers.</p>
   </footer>
-
   <script>
     (function () {
       var nodes = document.querySelectorAll(".reveal");
@@ -127,7 +127,7 @@
             io.unobserve(entries[i].target);
           }
         }
-      }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+      }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
       for (var j = 0; j < nodes.length; j++) io.observe(nodes[j]);
     })();
   </script>
