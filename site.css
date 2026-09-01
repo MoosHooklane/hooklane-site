@@ -1,4 +1,4 @@
-/* Hooklane Clip Kit. Layout C. Tokens from landing-page-design, colors from brand. */
+/* Hooklane Clip Kit. Layout C. Bunny loads Fraunces+Manrope. Do not inline woff2. */
 :root {
   --bg: #0c0c0b;
   --bone: #eceae4;
@@ -352,6 +352,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 12px 24px;
   padding: 32px 0 64px;
   color: var(--muted);
