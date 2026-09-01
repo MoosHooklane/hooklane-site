@@ -1,4 +1,5 @@
 name: decode-og-jpg
+# decode assets-og/og.jpg.b64 → og.jpg for production
 on:
   push:
     paths:
