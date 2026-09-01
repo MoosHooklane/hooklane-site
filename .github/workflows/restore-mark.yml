@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Put hook+lane mark data URI back on the header img
+      - name: Put hook+lane PNG data URI on the header img
         run: |
-          python3 -c 'import re,subprocess,pathlib; old=subprocess.check_output(["git","show","97f5a3b0f739c53f194fe68be7f180c81a9de0fb:index.html"],text=True); m=re.search(r"data:image/png;base64,[A-Za-z0-9+/=]+", old); html=pathlib.Path("index.html").read_text(); html=html.replace("src=\"favicon.svg\"", "src=\""+m.group(0)+"\"", 1); pathlib.Path("index.html").write_text(html); print("mark", len(m.group(0)))'
+          python3 -c 'import re,subprocess,pathlib; old=subprocess.check_output(["git","show","97f5a3b0f739c53f194fe68be7f180c81a9de0fb:index.html"],text=True); m=re.search(r"data:image/png;base64,[A-Za-z0-9+/=]+", old); html=pathlib.Path("index.html").read_text(); mark=m.group(0); html=html.replace("src=\"mark.svg\"", "src=\""+mark+"\"", 1); pathlib.Path("index.html").write_text(html); print("mark", len(mark), "has_data", "data:image/png" in html)'
       - name: Commit
         run: |
           git config user.name github-actions[bot]
