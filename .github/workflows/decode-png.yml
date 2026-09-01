@@ -30,6 +30,7 @@ jobs:
                   print("skip not png", name)
                   continue
               pathlib.Path(name).write_bytes(data)
+              print("wrote", name, len(data))
               ok += 1
           if ok == 0:
               raise SystemExit("no pngs decoded")
@@ -38,7 +39,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add favicon-32.png favicon-48.png apple-touch-icon.png mark.png hooklane-mark-mail.png || true
+          for f in favicon-32.png favicon-48.png apple-touch-icon.png mark.png hooklane-mark-mail.png; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           git status
           if git diff --cached --quiet; then
             echo "no png changes"
