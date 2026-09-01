@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hooklane">
-  <rect width="64" height="64" fill="#0c0c0b"/>
-  <g transform="matrix(0.0754 0 0 0.0754 -26.82 -6.04)">
-    <path fill="#eceae4" d="M731 284C670 318 575 378 519 428A185.5 185.5 0 1 0 832 626H1076V553H778.5A111 111 0 1 1 668.5 427.5L656 419 672 412 731 284Z"/>
-    <path fill="#c45a2a" d="M731 284L716 316 702 348 687 380 672 412 656 419 663 404 674 380 688 348 703 316 718 292Z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#0c0c0b"/>
+  <text x="7.2" y="21.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13.5" font-weight="650" letter-spacing="1.8" fill="#eceae4">HL</text>
+  <path d="M7.4 24.1 A 2.15 2.15 0 0 0 11.7 24.1 H 24.6" fill="none" stroke="#c45a2a" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
